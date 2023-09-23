@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import { FaLocationDot } from 'react-icons/fa';
+import { IoLocationOutline, IoLogoBitcoin } from "react-icons/io5";
 const Job = ({ Job }) => {
-    const { logo, job_title, company_name, job_type, salary, location, remote_or_onsite } = Job || {};
+    const { id, logo, job_title, company_name, job_type, salary, location, remote_or_onsite } = Job || {};
     console.log(Job);
     return (
         <div>
@@ -19,10 +19,10 @@ const Job = ({ Job }) => {
                     </div>
                 </div>
                 <div className="flex gap-x-5">
-                    <p><FaLocationDot></FaLocationDot> {location}</p>
-                    <p> Salary: {salary}</p>
+                    <p className="flex items-center font-semibold "><IoLocationOutline ></IoLocationOutline> {location}</p>
+                    <p className="flex items-center"> <IoLogoBitcoin></IoLogoBitcoin> Salary: {salary}</p>
                 </div>
-                <Link><button className="btn btn-outline btn-secondary">View Details</button></Link>
+                <Link to={`/Job/${id}`}><button className="btn btn-outline btn-secondary">View Details</button></Link>
             </div>
 
         </div>
